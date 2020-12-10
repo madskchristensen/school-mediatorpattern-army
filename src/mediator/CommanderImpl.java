@@ -4,7 +4,7 @@ import units.ArmedUnit;
 
 public class CommanderImpl implements Commander {
     private ArmedUnit soldierUnit, tankUnit;
-    private boolean attackInProgress = true;
+    private boolean canAttack = true;
 
     @Override
     public void registerArmedUnits(ArmedUnit soldierUnit, ArmedUnit tankUnit) {
@@ -13,13 +13,13 @@ public class CommanderImpl implements Commander {
     }
 
     @Override
-    public void setAttackInProgress(boolean attackInProgress) {
-        this.attackInProgress = attackInProgress;
+    public void setCanAttack(boolean canAttack) {
+        this.canAttack = canAttack;
     }
 
     @Override
     public boolean canAttack() {
-        return attackInProgress;
+        return canAttack;
     }
 
     @Override

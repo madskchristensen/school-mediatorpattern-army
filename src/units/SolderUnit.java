@@ -13,7 +13,7 @@ public class SolderUnit implements ArmedUnit {
     public void attack() {
         if(commander.canAttack()) {
             System.out.println("SoldierUnit: Attacking...");
-            commander.setAttackInProgress(false);
+            commander.setCanAttack(false);
         } else {
             System.out.println("SoldierUnit: Cannot attack now. Other units attacking...");
         }
@@ -22,6 +22,6 @@ public class SolderUnit implements ArmedUnit {
     @Override
     public void stopAttack() {
         System.out.println("SoldierUnit: Stopped attacking...");
-        commander.setAttackInProgress(true);
+        commander.setCanAttack(true);
     }
 }

@@ -13,7 +13,7 @@ public class TankUnit implements ArmedUnit {
     public void attack() {
         if(commander.canAttack()) {
             System.out.println("TankUnit: Attacking...");
-            commander.setAttackInProgress(false);
+            commander.setCanAttack(false);
         } else {
             System.out.println("TankUnit: Cannot attack now. Other units attacking...");
         }
@@ -22,6 +22,6 @@ public class TankUnit implements ArmedUnit {
     @Override
     public void stopAttack() {
         System.out.println("TankUnit: Stopped attacking...");
-        commander.setAttackInProgress(true);
+        commander.setCanAttack(true);
     }
 }
